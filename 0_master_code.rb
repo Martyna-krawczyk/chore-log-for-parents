@@ -30,28 +30,26 @@ loop do
   case action
   when 1
     for chore in chores
-      puts "*********************"
+      puts "________________________"
       puts "Task: #{chore[:task]}"
       puts "Value: $#{chore[:value]}" #to_f doesn't work here - how can I add two decimal spaces?
-      puts "*********************"
+      puts "________________________"
     end
+
+  when 2
+    puts "Task:"
+    task = gets.chomp
+    puts "Value:"
+    value = gets.chomp.to_f
+    
+    chore = {
+        task: task,
+        value: value
+    }
+    chores.push(chore)
+    puts "Your chore has been added"
 end
 end
-#   when 2
-#     puts "Task:"
-#     name = gets.chomp
-#     puts "Value:"
-#     value = gets.chomp.to_f
-
-#     chore = {
-#       task: task,
-#       value: value
-#     }
-
-#     chores.push(chore)
-#     puts "Your chore has been added"
-#   end
-
 #   when 3
 #         puts "Select the chore to remove:"
 #         task = gets.chomp
