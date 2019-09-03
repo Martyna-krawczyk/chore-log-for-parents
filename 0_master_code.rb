@@ -1,3 +1,5 @@
+require 'colorize'
+
 chore1 = {
   task:"Vacuum House",
   value: 5.00
@@ -11,13 +13,16 @@ chore3 = {
   value: 5.00
 }
 
+user = {
+    total: 0,
+    tasks: []
+}
+# p "Current Balance is #{balance}"
 chores = [chore1, chore2, chore3]
 
-# balance = 0 
-# p "Current Balance is #{balance}"
 
 loop do 
-  puts "1. View chores"
+  puts "1. Log completed chores"
   puts "2. Add custom chore to list"
   puts "3. Remove chore from list"
   puts "4. View balance"
@@ -30,10 +35,11 @@ loop do
   case action
   when 1
     for chore in chores
-      puts "________________________"
+      puts "________________________".colorize(:blue)
       puts "Task: #{chore[:task]}"
-      puts "Value: $#{chore[:value]}" #to_f doesn't work here - how can I add two decimal spaces?
-      puts "________________________"
+      puts "Value: $#{chore[:value]}".colorize(:green) #to_f doesn't work here - how can I add two decimal spaces?
+      puts "________________________".colorize(:blue)
+      puts "" #using the each_with_index method, the user can select based on index value
     end
 
   when 2
@@ -48,26 +54,31 @@ loop do
     }
     chores.push(chore)
     puts "Your chore has been added"
-end
-end
-#   when 3
-#         puts "Select the chore to remove:"
-#         task = gets.chomp
-#         chores.each do |chore| 
-#       if chore[:task] == task
-#         puts "Are you sure you want to remove this chore?"
-#         confirm = gets.chomp
-#         if confirm.downcase == 'yes'
-#           index = chores.index(chores)
-#           chores.delete_at(index)
-#           puts "Chore successfully deleted"
-#           break
-#         else
-#           puts "Chore has not been deleted"
-#           break
-#         end
-#       end
-#     end
+#   end
+
+  when 3
+    puts "Select the chore to remove:"
+    task = gets.chomp
+    chores.each do |chore| 
+    if chore[:task] == task
+    puts "Are you sure you want to remove this chore?"
+    confirm = gets.chomp
+        if confirm.downcase == 'yes' 
+            index = chores.index(chores).to_i
+            chores.delete_at(index)
+            puts "Chore successfully deleted"
+            break
+        else
+            puts "Chore has not been deleted"
+            break
+        end
+    else
+        chore[:task] != task
+        puts "This chore isn't on the list. Please try again." #This is printing three times
+    end
+  end
+  end #ends case
+end #ends loop
 
 #   when 4
 #         p balance
