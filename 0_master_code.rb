@@ -1,4 +1,5 @@
 require 'colorize'
+require "tty-prompt"
 
 chore1 = {
   task:"vacuum house",
@@ -42,7 +43,7 @@ loop do
       puts "________________________".colorize(:blue)
       puts "" #using the each_with_index method, the user can select based on index value
     end
-
+    
     # p "Which chore would you like to mark as completed?"
     # print "> "
     # deposit_amount = gets.strip.to_i
