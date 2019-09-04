@@ -1,5 +1,7 @@
 require 'colorize'
 require "tty-prompt"
+# require 'pry'
+
 prompt = TTY::Prompt.new
 
 chore1 = {
@@ -20,7 +22,7 @@ user = {
     tasks: []
 }
 
-chores = [chore1, chore2, chore3]
+chores = [chore1, chore2, chore3] 
 
 # transactions = []
 
@@ -42,23 +44,16 @@ loop do
       puts "Task: #{chore[:task]}"
       puts "Value: $#{chore[:value]}".colorize(:green) #to_f doesn't work here - how can I add two decimal spaces?
       puts "________________________".colorize(:blue)
-      puts "" #using the each_with_index method, the user can select based on index value
     end
 
-    # prompt.select("Which chore has been completed?", %w(vacuum clean flush))
-    def select_chore
-        {self.task + ("\n") + self.value + ("\n") self.index}
-    end
-    prompt.select("Which chore has been completed?", %w(vacuum clean flush))
+    prompt.select("Which chore has been completed?", chores.map {|i| i[:task]}) 
     
-    # p "Which chore would you like to mark as completed?"
-    # print "> "
-    # deposit_amount = gets.strip.to_i
-    # balance += deposit_amount
-    # system("clear")
-    # p "Your balance is now $#{balance}"
-    # transactions.push "Deposited #{deposit_amount}"
-    # user_input == "end"
+    def balance_calculator(number_100)
+        #method scope
+        number_200 = number_100 * 2
+        name = "Harrison"
+        return number_200
+    end
 
   when 2
     puts "Type in your new chore:"
