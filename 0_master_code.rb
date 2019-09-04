@@ -25,22 +25,23 @@ chores = [chore1, chore2, chore3]
 
 
 loop do 
-  puts "1. View and log completed chores"
-  puts "2. Add custom chore to list"
-  puts "3. Remove chore from list"
-  puts "4. View balance and completed chores"
-  puts "5. Payout your child" 
-  puts "6. Exit"
+  puts "1. View and log completed chores".colorize(:light_magenta)
+  puts "2. Add custom chore to list".colorize(:light_magenta)
+  puts "3. Remove chore from list".colorize(:light_magenta)
+  puts "4. View balance and completed chores".colorize(:light_magenta)
+  puts "5. Payout your child" .colorize(:light_magenta)
+  puts "6. Exit".colorize(:light_magenta)
 
   action = gets.chomp.to_i
-
+  system("clear")
   case action
   when 1
     for chore in chores
       puts "__________________________________".colorize(:blue)
       puts "Chore: #{chore[:task]}"
-      puts "Worth: $#{chore[:value]}0".colorize(:green) #to_f doesn't work here - how can I add two decimal spaces?
+      puts "Worth: $#{chore[:value]}0".colorize(:light_green)
       puts "__________________________________".colorize(:blue)
+      puts ""
     end
 
     answer = prompt.select("Which chore has your child completed?", chores.map {|i| i[:task]})
@@ -52,7 +53,7 @@ loop do
     end
     
     user[:total_balance] =  user[:total_balance] + selected_chore[:value]
-    
+    system("clear")
     puts "Fantastic! $#{selected_chore[:value]}0 has been added to your child's balance!".colorize(:green)
 
 
@@ -69,6 +70,7 @@ loop do
         value: value
     }
     chores.push(chore)
+    system("clear")
     puts "Your custom chore has been added to the list.".colorize(:blue)
 
 
@@ -84,9 +86,11 @@ loop do
         if confirm.downcase == 'yes' 
             index = chores.index(chores).to_i
             chores.delete_at(index)
+            system("clear")
             puts "Chore successfully deleted".colorize(:blue)
             break
         else
+            system("clear")
             puts "Chore has not been deleted".colorize(:red)
             break
         end
@@ -98,20 +102,21 @@ loop do
   end
   
   when 4
-        puts "Your Child's Current Balance is $#{user[:total_balance]} for completion of the following task(s) #{user[:tasks].to_s}!"
-        # p user[:tasks]
-        # system("clear")
+    # user[:tasks] = user[:tasks]
+    system("clear")
+    puts "Your Child's Current Balance is $#{user[:total_balance]}0 for completion of the following task(s) #{user[:tasks]}!".colorize(:green)
 
   when 5
-    loop do    
+    loop do  
+        p "Your Child's Current Balance is $#{user[:total_balance]}0"  
         p "How much would you like to payout to your child?"
         print "> "
         payout = gets.chomp.to_f
         if payout <= user[:total_balance]
             user[:total_balance] = user[:total_balance] - payout
             system("clear")
-            p "Your childs balance is now $#{user[:total_balance]}"
-            "Paid out #{payout} to child"
+            p "Your childs balance is now $#{user[:total_balance]}0"
+            p "Successfully paid out $#{payout}0 to your child"
             break
         else payout > user[:total_balance]
             system("clear")
