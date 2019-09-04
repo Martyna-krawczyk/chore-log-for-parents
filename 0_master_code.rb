@@ -32,23 +32,17 @@ def view_menu
     puts "6. Exit".colorize(:light_magenta)
 end
 
-
-loop do 
-  puts view_menu
-
-  action = gets.chomp.to_i
-  system("clear")
-  case action
-    
-  when 1
+def view_chores_list(chores)
     for chore in chores
-      puts "__________________________________".colorize(:blue)
-      puts "Chore: #{chore[:task]}"
-      puts "Worth: $#{chore[:value]}0".colorize(:light_green)
-      puts "__________________________________".colorize(:blue)
-      puts ""
-    end
+        puts "__________________________________".colorize(:blue)
+        puts "Chore: #{chore[:task]}"
+        puts "Worth: $#{chore[:value]}0".colorize(:light_green)
+        puts "__________________________________".colorize(:blue)
+        puts ""
+      end
+end
 
+def user_data(chores,chore)
     answer = prompt.select("Which chore has your child completed?", chores.map {|i| i[:task]})
 
     user[:tasks] << answer
@@ -60,8 +54,20 @@ loop do
     user[:total_balance] =  user[:total_balance] + selected_chore[:value]
     system("clear")
     puts "Fantastic! $#{selected_chore[:value]}0 has been added to your child's balance!".colorize(:green)
+end
 
+loop do 
+  puts view_menu
 
+  action = gets.chomp.to_i
+  system("clear")
+  case action
+
+  when 1
+    view_chores_list(chores)
+    user_data(chores,chore)
+
+    
   when 2
     puts "Type in your new chore to add to the list:"
     print "> "
@@ -109,15 +115,14 @@ loop do
         # Check if this is the final iteration.
         if chores.index(chore) == chores.length - 1
             if chore[:task] != task
-                puts "This chore isn't on the list. Please try again.".colorize(:red) #This is printing three times
+                puts "This chore isn't on the list. Please try again.".colorize(:red) 
              end
         end
         
-    end #Need to come up with better error handling?
+    end 
   end
   
   when 4
-    # user[:tasks] = user[:tasks]
     system("clear")
     puts "Your Child's Current Balance is $#{user[:total_balance]}0 for completion of the following task(s) #{user[:tasks]}!".colorize(:green)
 
