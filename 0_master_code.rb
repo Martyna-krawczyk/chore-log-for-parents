@@ -75,7 +75,7 @@ loop do
 
 
   when 3
-    puts "Select the chore to remove from the list(enter exact name)"
+    puts "Select the chore to remove from the list"
     print "> "
     task = gets.chomp.capitalize
     chores.each do |chore| 
@@ -84,8 +84,11 @@ loop do
     print "> "
     confirm = gets.chomp
         if confirm.downcase == 'yes' 
-            index = chores.index(chores).to_i
-            chores.delete_at(index)
+            # index = chores.index(chores).to_i
+            # chores.delete_at(index)
+            chore.delete_if { |x|
+                x==task
+            }
             system("clear")
             puts "Chore successfully deleted".colorize(:blue)
             break
@@ -96,7 +99,7 @@ loop do
         end
     else
          if chore[:task] != task
-        puts "This chore isn't on the list. Please try again." #This is printing three times
+            puts "This chore isn't on the list. Please try again.".colorize(:red) #This is printing three times
          end
     end #Need to come up with better error handling?
   end
@@ -108,7 +111,7 @@ loop do
 
   when 5
     loop do  
-        p "Your Child's Current Balance is $#{user[:total_balance]}0"  
+        p "Your child's current balance is $#{user[:total_balance]}0"  
         p "How much would you like to payout to your child?"
         print "> "
         payout = gets.chomp.to_f
@@ -116,7 +119,7 @@ loop do
             user[:total_balance] = user[:total_balance] - payout
             system("clear")
             p "Your childs balance is now $#{user[:total_balance]}0"
-            p "Successfully paid out $#{payout}0 to your child"
+            p "You have paid out $#{payout}0 to your child"
             break
         else payout > user[:total_balance]
             system("clear")
