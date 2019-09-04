@@ -4,20 +4,20 @@ require "tty-prompt"
 prompt = TTY::Prompt.new
 
 chore1 = {
-  task:"vacuum house",
+  task:"Vacuum house",
   value: 3.00
 }
 chore2 = {
-  task:"mop floors",
+  task:"Mop floors",
   value: 4.00
 }
 chore3 = {
-  task:"clean toilet",
+  task:"Clean toilet",
   value: 5.00
 }
 
 user = {
-    total_balance: 0,
+    total_balance: 0.0,
     tasks: []
 }
 
@@ -33,17 +33,17 @@ loop do
   puts "6. Exit"
 
   action = gets.chomp.to_i
-    balances = []
+
   case action
   when 1
     for chore in chores
-      puts "________________________".colorize(:blue)
-      puts "Task: #{chore[:task]}"
-      puts "Value: $#{chore[:value]}".colorize(:green) #to_f doesn't work here - how can I add two decimal spaces?
-      puts "________________________".colorize(:blue)
+      puts "__________________________________".colorize(:blue)
+      puts "Chore: #{chore[:task]}"
+      puts "Worth: $#{chore[:value]}0".colorize(:green) #to_f doesn't work here - how can I add two decimal spaces?
+      puts "__________________________________".colorize(:blue)
     end
 
-    answer = prompt.select("Which chore has been completed?", chores.map {|i| i[:task]})
+    answer = prompt.select("Which chore has your child completed?", chores.map {|i| i[:task]})
 
     user[:tasks] << answer
     
@@ -53,13 +53,13 @@ loop do
     
     user[:total_balance] =  user[:total_balance] + selected_chore[:value]
     
-    puts "Fantastic! This value has been added to your child's balance! Push 4 to view balance.".colorize(:green)
+    puts "Fantastic! $#{selected_chore[:value]}0 has been added to your child's balance!".colorize(:green)
 
 
   when 2
     puts "Type in your new chore to add to the list:"
     print "> "
-    task = gets.chomp
+    task = gets.chomp.capitalize
     puts "How much would you like to pay your child for this chore(enter without $ eg. 1.00)?"
     print "> "
     value = gets.chomp.to_f
@@ -75,7 +75,7 @@ loop do
   when 3
     puts "Select the chore to remove from the list(enter exact name)"
     print "> "
-    task = gets.chomp
+    task = gets.chomp.capitalize
     chores.each do |chore| 
     if chore[:task] == task
     puts "Are you sure you want to remove this chore?"
