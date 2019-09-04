@@ -95,11 +95,6 @@ loop do
     print "> "
     confirm = gets.chomp
         if confirm.downcase == 'yes' 
-            # index = chores.index(chores).to_i
-            # chores.delete_at(index)
-            # chore.delete_if { |x|
-            #     x == task
-            # }
             index = chores.index(chore)
             chores.delete_at(index)
             system("clear")
