@@ -23,18 +23,23 @@ user = {
 
 chores = [chore1, chore2, chore3] 
 
+def view_menu
+    puts "1. View and log completed chores".colorize(:light_magenta)
+    puts "2. Add custom chore to list".colorize(:light_magenta)
+    puts "3. Remove chore from list".colorize(:light_magenta)
+    puts "4. View balance and completed chores".colorize(:light_magenta)
+    puts "5. Payout your child" .colorize(:light_magenta)
+    puts "6. Exit".colorize(:light_magenta)
+end
+
 
 loop do 
-  puts "1. View and log completed chores".colorize(:light_magenta)
-  puts "2. Add custom chore to list".colorize(:light_magenta)
-  puts "3. Remove chore from list".colorize(:light_magenta)
-  puts "4. View balance and completed chores".colorize(:light_magenta)
-  puts "5. Payout your child" .colorize(:light_magenta)
-  puts "6. Exit".colorize(:light_magenta)
+  puts view_menu
 
   action = gets.chomp.to_i
   system("clear")
   case action
+    
   when 1
     for chore in chores
       puts "__________________________________".colorize(:blue)
