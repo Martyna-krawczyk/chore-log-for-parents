@@ -56,7 +56,7 @@ loop do
     # selected_chore = chores.find do |chore|
         # selected_chore[:task] << user[:tasks]
     # end
-    puts "Fantastic!  This value has been added to your child's balance! Push 4 to view balance.".colorize(:green)
+    puts "Fantastic! This value has been added to your child's balance! Push 4 to view balance.".colorize(:green)
     # p user
 
   when 2
@@ -109,16 +109,16 @@ loop do
     loop do    
         p "How much would you like to payout to your child?"
         print "> "
-        payout = gets.chomp.to_i
-        if payout <= chore[:value]
-            chore[:value] = chore[:value] - payout
+        payout = gets.chomp.to_f
+        if payout <= user[:total_balance]
+            user[:total_balance] = user[:total_balance] - payout
             system("clear")
-            p "Your childs balance is now $#{chore[:value]}"
-            transactions.push "Paid out #{payout} to child"
+            p "Your childs balance is now $#{user[:total_balance]}"
+            "Paid out #{payout} to child"
             break
-        else payout > chore[:value]
+        else payout > user[:total_balance]
             system("clear")
-            p "Your child hasn't earned that much!"
+            puts "Your child hasn't earned that much!".colorize(:red)
             break
         end
     end
