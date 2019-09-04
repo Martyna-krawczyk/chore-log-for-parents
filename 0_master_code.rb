@@ -25,11 +25,11 @@ chores = [chore1, chore2, chore3]
 
 
 loop do 
-  puts "1. Log completed chores"
+  puts "1. View and log completed chores"
   puts "2. Add custom chore to list"
   puts "3. Remove chore from list"
-  puts "4. View balance"
-  puts "5. Payout" 
+  puts "4. View balance and completed chores"
+  puts "5. Payout your child" 
   puts "6. Exit"
 
   action = gets.chomp.to_i
@@ -53,17 +53,14 @@ loop do
     
     user[:total_balance] =  user[:total_balance] + selected_chore[:value]
     
-    # selected_chore = chores.find do |chore|
-        # selected_chore[:task] << user[:tasks]
-    # end
     puts "Fantastic! This value has been added to your child's balance! Push 4 to view balance.".colorize(:green)
-    # p user
+
 
   when 2
-    puts "Type in your new chore:"
+    puts "Type in your new chore to add to the list:"
     print "> "
     task = gets.chomp
-    puts "Value:"
+    puts "How much would you like to pay your child for this chore(enter without $ eg. 1.00)?"
     print "> "
     value = gets.chomp.to_f
     
@@ -72,11 +69,11 @@ loop do
         value: value
     }
     chores.push(chore)
-    puts "Your chore has been added"
+    puts "Your custom chore has been added to the list.".colorize(:blue)
 
 
   when 3
-    puts "Select the chore to remove:"
+    puts "Select the chore to remove from the list(enter exact name)"
     print "> "
     task = gets.chomp
     chores.each do |chore| 
@@ -87,10 +84,10 @@ loop do
         if confirm.downcase == 'yes' 
             index = chores.index(chores).to_i
             chores.delete_at(index)
-            puts "Chore successfully deleted"
+            puts "Chore successfully deleted".colorize(:blue)
             break
         else
-            puts "Chore has not been deleted"
+            puts "Chore has not been deleted".colorize(:red)
             break
         end
     else
