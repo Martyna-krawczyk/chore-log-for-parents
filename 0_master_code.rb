@@ -86,11 +86,14 @@ loop do
         if confirm.downcase == 'yes' 
             # index = chores.index(chores).to_i
             # chores.delete_at(index)
-            chore.delete_if { |x|
-                x==task
-            }
+            # chore.delete_if { |x|
+            #     x == task
+            # }
+            index = chores.index(chore)
+            chores.delete_at(index)
             system("clear")
             puts "Chore successfully deleted".colorize(:blue)
+
             break
         else
             system("clear")
@@ -98,9 +101,13 @@ loop do
             break
         end
     else
-         if chore[:task] != task
-            puts "This chore isn't on the list. Please try again.".colorize(:red) #This is printing three times
-         end
+        # Check if this is the final iteration.
+        if chores.index(chore) == chores.length - 1
+            if chore[:task] != task
+                puts "This chore isn't on the list. Please try again.".colorize(:red) #This is printing three times
+             end
+        end
+        
     end #Need to come up with better error handling?
   end
   
