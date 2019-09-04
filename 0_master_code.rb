@@ -36,7 +36,7 @@ loop do
   puts "6. Exit"
 
   action = gets.chomp.to_i
-
+    balances = []
   case action
   when 1
     for chore in chores
@@ -50,8 +50,13 @@ loop do
     selected_chore = chores.find do |chore|
         chore[:task] == answer
     end
+    # selected_chore[:value] + user[:total_balance] = new_balance
+    # new_balance << user[:total_balance]
+
+    user[:total_balance] =  user[:total_balance] + selected_chore[:value]
 p " ==================="
-p selected_chore
+p user
+
     # answer = prompt.select("Which chore has been completed?", chores.map {|a, b| a[:task], b[:value]}) 
     # if answer == a[:task]
     #     user[:total_balance] = b[:value] + user[:total_balance]#how to refer to the value of the sellected key's hash.
