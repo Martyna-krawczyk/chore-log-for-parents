@@ -46,10 +46,16 @@ loop do
       puts "________________________".colorize(:blue)
     end
 
-    answer = prompt.select("Which chore has been completed?", chores.map {|a, b| a[:task], b[:value]}) 
-    if answer == a[:task]
-        user[:total_balance] = b[:value] + user[:total_balance]#how to refer to the value of a[:task]
+    answer = prompt.select("Which chore has been completed?", chores.map {|i| i[:task]})
+    selected_chore = chores.find do |chore|
+        chore[:task] == answer
     end
+p " ==================="
+p selected_chore
+    # answer = prompt.select("Which chore has been completed?", chores.map {|a, b| a[:task], b[:value]}) 
+    # if answer == a[:task]
+    #     user[:total_balance] = b[:value] + user[:total_balance]#how to refer to the value of the sellected key's hash.
+    # end
 
   when 2
     puts "Type in your new chore:"
