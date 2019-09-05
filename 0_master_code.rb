@@ -106,8 +106,9 @@ def remove_chore(chores)
   end
 end
 
-def print_balance
-
+def print_balance(user)
+    system("clear")
+    puts "Your Child's Current Balance is $#{user[:total_balance]}0 for completion of the following task(s) #{user[:tasks]}!".colorize(:green)
 end
 
 loop do 
@@ -130,8 +131,7 @@ loop do
     remove_chore(chores)
 
   when 4
-    system("clear")
-    puts "Your Child's Current Balance is $#{user[:total_balance]}0 for completion of the following task(s) #{user[:tasks]}!".colorize(:green)
+    print_balance(user)
 
   when 5
     loop do  
