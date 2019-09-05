@@ -73,23 +73,7 @@ def add_new_chore(chores)
     puts "Your custom chore has been added to the list.".colorize(:blue)
 end
 
-loop do 
-  puts view_menu
-
-  action = gets.chomp.to_i
-  system("clear")
-  case action
-
-  when 1
-    view_chores_list(chores)
-    user_data(chores, user)
-
-    
-  when 2
-    add_new_chore(chores)
-
-
-  when 3
+def remove_chore(chores)
     puts "Select the chore to remove from the list"
     print "> "
     task = gets.chomp.capitalize
@@ -120,7 +104,31 @@ loop do
         
     end 
   end
-  
+end
+
+def print_balance
+
+end
+
+loop do 
+  puts view_menu
+
+  action = gets.chomp.to_i
+  system("clear")
+  case action
+
+  when 1
+    view_chores_list(chores)
+    user_data(chores, user)
+
+    
+  when 2
+    add_new_chore(chores)
+
+
+  when 3
+    remove_chore(chores)
+
   when 4
     system("clear")
     puts "Your Child's Current Balance is $#{user[:total_balance]}0 for completion of the following task(s) #{user[:tasks]}!".colorize(:green)
