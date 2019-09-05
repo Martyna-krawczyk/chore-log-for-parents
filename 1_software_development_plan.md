@@ -30,10 +30,11 @@ On starting the app, the user will be presented with a menu, where they can sele
 
 ### Future improvements
 The following improvements would be advantageous for future updates:
+*   Error handling for case 5 - if the user doesn't enter a number, return an error
 *   Ability to use this for multiple children
 *   Login/out method for user
 *   Retention of changes made to library and balances 
-*   Updating the remove function to utilize the tty-prompt menu and thus, improve customer experience by removing the need to type in the chore name (thus saving the user from looping through the error handling process).
+*   Updating the remove function to utilize the tty-prompt menu and thus, improve customer experience by removing the need to type in the chore name (saving the user from looping through the error handling process).
 
 
 ## User Experience Outline
@@ -44,25 +45,21 @@ On starting the app, the user will be presented with a menu, where they can sele
     On selection of option 1, the the list of pre-set chores will appear on the screen, followed by a menu that allows the selection of the chore that has been completed by their child. The user will scroll through the menu options using the up and down arrow keys untin the completed chore is highlighted, then by pushing enter, the application will return a note advising that the $ value of that chore has been added to the child's total balance.
 
 ### Feature 2 - Adding Custom Chores to List
-    On selection of option 2, the user will be asked to input the name of the chore which they'd like to add to the list as well as the $ value of that chore. The user will be able to add a custom chore and it's respective $ value which will show up in the menu as an option to mark complete. 
+    On selection of option 2, the user will be asked to input the name of the chore which they'd like to add to the list as well as the $ value of that chore. The user will be able to add a custom chore and it's respective $ value which will show up in the menu as an option to mark complete if option 1 is selected.
 
 ### Feature 3 - Removing Chores From List
-    On selection of option 3, the user will be presented with the list of chores to assist. The user will be asked to input the name of the chore which they'd like removedSome users may feel the pre-set chores are not applicable to them, therefore the user will be able to remove a chore and it's respective value from the list. This feature requires user input and an if/ else statement to loop through.  This case requires the user to input the name of the chore they'd like to delete, making sure the input matches the list item and will ask the user for confirmation of deletion.  If the wrong name has been entered, the user will be notified that the chore is not on the list via an else statement which will run on the final iteration.
+    On selection of option 3, the user will be presented with the list of chores. The user will be asked to input the name of the chore which they'd like removed.  After the user has typed in the name and pushed enter, if the name is typed in correctly, another message will ask the user to confirm they'd like to remove it. If the wrong name has been entered, the user will be notified that the chore is not on the list and that they need to try again.
 
 ### Feature 4 - View Balance and Completed Chores
-    As each chore has been marked completed, the accrued balance will update in the background so that when the information is required, the user can view their child's accrued balance. This case is a puts statement with a string interpolation referencing the user hash values.
+    On selection of option 4, the user will be presented a statement advising the balance payable to their child as well as a list of the tasks which were completed. 
 
 ### Feature 5 - Payout Your Child
-    As in a bank application, there is a withdrawl function (or in this case, a payout your child).  At some point the child would like to be paid out and this case allows for a deduction to be made from the total balance.  On selection of this option, the user is presented with the current balance and requests user input for how much they would like to payout to their choild. This function iterates through an if loop where, if their payout is less than the total balance, the payout will deduct from their total balance and return their new balance to the screen. If they are paying out too much, a notification returns to advise that the child hasn't earned this much (error handling).
+    On selection of option 5, the user will be presented with the current balance accrued by their child, followed by being asked to input the amount they'd like to payout. Once the user enters the amount and pushes enter, as long as the payout amount is less than the balance, it will deduct this amount from the balance. If they are paying out too much, a notification returns to advise that the child hasn't earned this much.
 
 ### Feature 6 - Exit
-    Case 6 allows the user to exit - this will break out of the application.
-
-Your outline must include:
-- how the user will find out how to interact with / use each feature
-- how the user will interact with / use each feature
-- how errors will be handled by the application and displayed to the user
+    On selection of option 6, the application will close.
 
 
-Flow Diagram
+## Flow Diagram
+Please see the flowchart at [https://drive.google.com/file/d/1UgxD6oSB2Yx3nHdYkGPN2t_uoWBiEOyD/view?usp=sharing]
 

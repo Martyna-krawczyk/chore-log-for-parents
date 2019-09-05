@@ -1,5 +1,7 @@
 require_relative '0_master_code.rb'
 
+puts "Welcome #{ARGV[0]}"
+
 chore1 = {
     task:"Vacuum house",
     value: 3.00
@@ -23,7 +25,7 @@ chore1 = {
 loop do 
     puts view_menu
     
-    action = gets.chomp.to_i
+    action = STDIN.gets.chomp.to_i
     system("clear")
     case action
       
@@ -44,5 +46,7 @@ loop do
       payout_child(user)
     when 6
       break
+    else
+        puts "I'm afraid you'll have to enter an option between 1 and 6!".colorize(:red)
     end 
   end 

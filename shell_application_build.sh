@@ -1,8 +1,10 @@
-# pwd
-# cd Desktop/
-# mkdir chorely_for_parents
+
+mkdir dist
+cp .run.rb ./dist
+cp .0_master_code.rb ./dist
+
 
 gem install colourize
 gem install tty-prompt
+gem install rubocop
 
-#to run this file, cd to the directory and type bash and the .sh file name

@@ -63,10 +63,10 @@ end
 def add_new_chore(chores)
   puts "Type in your new chore to add to the list:"
   print "> "
-  task = gets.chomp.capitalize
+  task = STDIN.gets.chomp.capitalize
   puts "How much would you like to pay your child for this chore(enter without $ eg. 1.00)?"
   print "> "
-  value = gets.chomp.to_f
+  value = STDIN.gets.chomp.to_f
   
   chore = {
     task: task,
@@ -83,12 +83,12 @@ def remove_chore(chores)
   view_chores_list(chores)
   puts "Type in the name of the chore to remove from the list"
   print "> "
-  task = gets.strip.capitalize
+  task = STDIN.gets.strip.capitalize
   chores.each do |chore| 
     if chore[:task] == task
       puts "Are you sure you want to remove this chore?"
       print "> "
-      confirm = gets.strip
+      confirm = STDIN.gets.strip
       if confirm.downcase == 'yes' 
         index = chores.index(chore)
         chores.delete_at(index)
@@ -126,7 +126,7 @@ def payout_child(user)
     puts "Your child's current balance is $#{user[:total_balance]}0".colorize(:green)
     puts "How much would you like to payout to your child?".colorize(:green)
     print "> "
-    payout = gets.chomp.to_f
+    payout = STDIN.gets.chomp.to_f
     if payout <= user[:total_balance]
       user[:total_balance] = user[:total_balance] - payout
       system("clear")
