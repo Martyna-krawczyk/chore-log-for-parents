@@ -30,6 +30,7 @@ On starting the app, the user will be presented with a menu, where they can sele
 
 ### Future improvements
 The following improvements would be advantageous for future updates:
+*   Error Handling for case 3 - if the user enters a number instead of a string, and vice versa, return an error
 *   Error handling for case 5 - if the user doesn't enter a number, return an error
 *   Ability to use this for multiple children
 *   Login/out method for user
