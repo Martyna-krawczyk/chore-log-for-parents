@@ -61,5 +61,5 @@ On starting the app, the user will be presented with a menu, where they can sele
 
 
 ## Flow Diagram
-Please see the flowchart at [https://drive.google.com/file/d/1UgxD6oSB2Yx3nHdYkGPN2t_uoWBiEOyD/view?usp=sharing]
+Please see the user interaction flowchart describing the process of a user logging a completed chore using this link: [https://drive.google.com/file/d/1bhcKzPdB1keXm-__eZ1ZSyzuieU1W0cv/view?usp=sharing]
 

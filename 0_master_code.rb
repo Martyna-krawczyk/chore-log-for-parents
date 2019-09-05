@@ -94,7 +94,7 @@ def remove_chore(chores)
         chores.delete_at(index)
         system("clear")
         puts "Chore successfully deleted".colorize(:blue)
-        
+        view_chores_list(chores)
         return chores
       else
         system("clear")
@@ -105,10 +105,9 @@ def remove_chore(chores)
       # Check if this is the final iteration.
       if chores.index(chore) == chores.length - 1
         if chore[:task] != task
-          puts "This chore isn't on the list. Please try again.".colorize(:red) 
+          puts "This chore isn't on the list. Push 3 to try again.".colorize(:red) 
         end
       end
-      
     end 
   end
 end

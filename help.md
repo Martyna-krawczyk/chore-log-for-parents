@@ -5,7 +5,7 @@ To run the app, run the build.sh file to install the required gems and copy the 
 
 ## Launch the File in Terminal
 To launch the app, type ruby run.rb followed by your name.
-On starting the app, you will be presented with a welcome note as well as a menu, where you can select options from 1-6 to run a specific task which are outlined in the below ptions.
+On starting the app, you will be presented with a welcome note as well as a menu, where you can select options from 1-6 to run a specific task which are outlined in the below options.
 
 ### Option 1 - View and Log Completed Chores
     This Option enables you to view the list of pre-set chores and mark off which task has been completed by your child. To scroll through the menu options, use the up and down arrow keys until the completed chore is highlighted, then by pushing enter, the application will return a note advising that the $ value of that chore has been added to your child's total balance.
