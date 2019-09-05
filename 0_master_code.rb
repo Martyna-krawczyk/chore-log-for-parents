@@ -56,19 +56,7 @@ def user_data(chores, user)
     puts "Fantastic! $#{selected_chore[:value]}0 has been added to your child's balance!".colorize(:green)
 end
 
-loop do 
-  puts view_menu
-
-  action = gets.chomp.to_i
-  system("clear")
-  case action
-
-  when 1
-    view_chores_list(chores)
-    user_data(chores, user)
-
-    
-  when 2
+def add_new_chore(chores)
     puts "Type in your new chore to add to the list:"
     print "> "
     task = gets.chomp.capitalize
@@ -83,6 +71,22 @@ loop do
     chores.push(chore)
     system("clear")
     puts "Your custom chore has been added to the list.".colorize(:blue)
+end
+
+loop do 
+  puts view_menu
+
+  action = gets.chomp.to_i
+  system("clear")
+  case action
+
+  when 1
+    view_chores_list(chores)
+    user_data(chores, user)
+
+    
+  when 2
+    add_new_chore(chores)
 
 
   when 3
