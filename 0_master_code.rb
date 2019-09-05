@@ -1,7 +1,7 @@
 require 'colorize'
 require "tty-prompt"
 
-prompt = TTY::Prompt.new
+PROMPT = TTY::Prompt.new
 
 chore1 = {
   task:"Vacuum house",
@@ -42,8 +42,8 @@ def view_chores_list(chores)
       end
 end
 
-def user_data(chores,chore)
-    answer = prompt.select("Which chore has your child completed?", chores.map {|i| i[:task]})
+def user_data(chores, user)
+    answer = PROMPT.select("Which chore has your child completed?", chores.map {|i| i[:task]})
 
     user[:tasks] << answer
     
@@ -65,7 +65,7 @@ loop do
 
   when 1
     view_chores_list(chores)
-    user_data(chores,chore)
+    user_data(chores, user)
 
     
   when 2
