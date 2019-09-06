@@ -1,4 +1,4 @@
-# Github
+# User Instructions
 ## Repository
 To access the repository, follow this link: [git@github.com:Martyna-krawczyk/chore-log-for-parents.git]
 
@@ -24,5 +24,13 @@ ruby run.rb
 ````txt
 ruby run.rb name
 ````
+
+# Project Management Tools Utilised
 Trello Access
-Please se this link to access the [https://trello.com/b/JKBDnXmb/chorely] 
+Please use this link to access the [https://trello.com/b/JKBDnXmb/chorely] 
+
+## Screenshots
+![screenshot 1](trello/martyna-Krawczyk-T1A2-1_Trello_Screen_Shot_2019-09-04_at_10.51.15_am.png)
+
+![screenshot 2](trello/martyna-Krawczyk-T1A2-2_ Trello_Screen_Shot_2019-09-04_at_2.13.31_pm.png)
+
