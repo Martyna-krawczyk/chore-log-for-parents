@@ -1,10 +1,28 @@
 # Help
+### To run the app, follow the steps below:
+
+1. Make sure that you've installed ruby on your machine. I used 'rbenv'. This required homebrew.
+
+2. Clone the repo.
+````txt
+git clone name.git
+````
+3. 'cd' into the directory you've cloned.
 
 ## Run the build.sh File
-To run the app, run the build.sh file to install the required gems and copy the appropriate ruby files.
+ To run the app, run the build.sh file to install the required gems and copy the appropriate ruby files.
 
-## Launch the File in Terminal
-To launch the app, type ruby run.rb followed by your name.
+4. Run the following command:
+```txt
+ruby run.rb
+```
+
+5. If you want to run in advanced mode - with a custom welcome message, enter the following command, typing your name into the 'name' field:
+```txt
+ruby run.rb name
+```
+
+
 On starting the app, you will be presented with a welcome note as well as a menu, where you can select options from 1-6 to run a specific task which are outlined in the below options.
 
 ### Option 1 - View and Log Completed Chores
