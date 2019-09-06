@@ -44,7 +44,17 @@ end
 ````
 
 Test 2 - Testing that a new array element is added when the user adds a new chore to the list
-
+````
+def check_remove_chores(chores)
+  initial_number_of_chores = chores.length
+    new_removed_chore_list = remove_chore(chores)
+    if new_removed_chore_list.length + initial_number_of_chores >=1
+        return "Test passes!".colorize(:green)
+    else
+        return "Test fails 😭".colorize(:red)
+    end
+end
+````
 
 ### Manual Testing
 The features were also tested manually.  Please use this link to view the sheet: [https://docs.google.com/spreadsheets/d/1jEf-tjmjS5an5clzq7E2ezlxGdY-ZSk4zjMZyYUQciQ/edit?usp=sharing]
@@ -61,4 +71,7 @@ Please use this link to access the project board [https://trello.com/b/JKBDnXmb/
 
 ![screenshot 3](trello/martyna-Krawczyk-T1A2-3_Trello_Screen_Shot_2019-09-05_at_3.04.52_pm.png)
 
-## Control Flow
+## Control Flow Diagram
+The below comtrol flow diagram demonstrates the process the user will go through to log a chore as completed:
+
+![Control Flow Diagram](Martyna_Krawczyk_T1A2_user_control_flow.png)
