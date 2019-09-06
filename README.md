@@ -1,4 +1,26 @@
-# User Instructions
+# CHORELY
+## Contents
+
+* Statement of Purpose
+* Running the App
+* Testing
+* Project Management Tools
+* Control Flow Diagram
+* Accessing the Software Development Plan
+
+## Statement of Purpose
+The purpose of this app is to assist parents by tracking completed chores, logging new completed chores and accruing the respective dollar value of the chores so that parents can dispense pocket money to their child in one lump sum. 
+As a parent myself, I would like to be able to track the extra chores the kids do so that I can pay them for their efforts in one lump sum. I feel that the financial insentive to do extra household chores would increase children's interest in helping their parents as well as help them to understand how small amounts of money can add up quickly, turning into a decent sum of money. As the app will have the ability to accrue the total dollar amount earned, this would help with decision making about whether the child should be dispensed cash, or receive money into their bank accounts, thus opening up a dialogue between parents and their children about finance, saving and responsible spending. In a society that is using cash a lot less, I believe this app will also encourage parents to deposit accrued pocket money into their child's bank account instead of dropping a couple of coins into a money box (without the ability to track savings or spendings).
+The tarket audience for this app are parents of any age, with a child under 15 years old. The parent(user) will be able to select a chore from a pre-set library and mark it as complete, as well as enter a custom chore with its dollar value as chosen by the user.  The user will be able to view a balance of pocket money earned for the completed tasks, as well as the list of completed tasks.
+
+## Features
+1. View and log completed chores
+2. Add custom chore to list
+3. Remove chore from list
+4. View balance and completed chores
+5. Payout your clild
+6. Exit
+
 ## Repository
 To access the repository, follow this link: [https://github.com/Martyna-krawczyk/chore-log-for-parents]
 
@@ -75,3 +97,6 @@ Please use this link to access the project board [https://trello.com/b/JKBDnXmb/
 The below comtrol flow diagram demonstrates the process the user will go through to log a chore as completed:
 
 ![Control Flow Diagram](Martyna_Krawczyk_T1A2_user_control_flow.png)
+
+## Software Development Plan
+See documents outside of README.
