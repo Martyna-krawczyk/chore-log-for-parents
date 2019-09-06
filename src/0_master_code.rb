@@ -6,7 +6,7 @@ require 'rubocop'
 require 'tty-font'
 
 font = TTY::Font.new(:doom)
-puts font.write("Chores, for Parents")
+puts font.write("Chorely")
 
 PROMPT = TTY::Prompt.new
 
