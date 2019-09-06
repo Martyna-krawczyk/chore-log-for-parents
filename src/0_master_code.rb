@@ -3,7 +3,10 @@
 require 'colorize'
 require 'tty-prompt'
 require 'rubocop'
+require 'tty-font'
 
+font = TTY::Font.new(:doom)
+puts font.write("Chores, for Parents")
 
 PROMPT = TTY::Prompt.new
 
